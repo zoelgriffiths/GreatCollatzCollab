@@ -22,7 +22,7 @@ blue = (0,0,255)
 
 #get data from spreadsheet
 
-book = xlrd.open_workbook("myfile1.xls")
+book = xlrd.open_workbook("submissions.xls")
 sh = book.sheet_by_index(0)
 number_of_cols = sh.ncols
 number_of_rows = sh.nrows
@@ -391,7 +391,7 @@ def allocate_pieces(map_numbers):
     for point in range(len(map_numbers)-1,-1,-1): 
         reverse_map.append(map_numbers[point])
     
-    #allocated numbers from the top of the map down (because there is fewer pieces of work that can contribute to each number higher up the map)
+    #numbers are allocated from the top of the map down (because there is fewer pieces of work that can contribute to each number higher up the map)
     
     for thing in reverse_map:
         print(thing)
@@ -450,7 +450,8 @@ def allocate_pieces(map_numbers):
         print("school {0} was used {1} times".format(schools_no_repeat[p],school_tally[p]))
         if school_tally[p] == 0:
             print("UHOH")
-        
+
+#You can see in the code above that pieces of work featured early on in the 'submissions' spreadsheet are given a higher priority than those later. But it's worth noting that the data in the sheet was sorted such that work with a better 'score' (from 1 to 4) was higher up the spreadsheet (and would therefore get priority). And then within those four categories the pieces of work were listed in a random order so no preference is given to any particular school. 
 
 map_numbers = draw_map()
 
