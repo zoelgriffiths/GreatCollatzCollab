@@ -66,7 +66,7 @@ def collatz(start_number):
                 start = False
     return list
 
-#I'm interested in the map we can draw with what we've got, what we can draw 
+#I'm interested in the map we can draw with what we've got
 
 #find out which numbers we have pics of
 
